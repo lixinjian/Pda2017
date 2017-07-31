@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pda2017</string>
+
+    <!--五个主菜单-->
+    <string name="enter">入库业务</string>
+    <string name="outter">出库业务</string>
+    <string name="stock">库存业务</string>
+    <string name="query">查询业务</string>
+    <string name="message">消息</string>
+
+
+</resources>

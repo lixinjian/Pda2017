@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <!--<item
+            android:id="@+id/nav_call"
+            android:title="上班登记"/>-->
+        <item
+            android:id="@+id/nav_modify_password"
+            android:title="修改密码"/>
+        <item
+            android:id="@+id/nav_about"
+            android:title="关于"/>
+        <item
+            android:id="@+id/nav_cancellation"
+            android:title="注销"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:title="退出"/>
+        <!--            android:icon="@mipmap/ic_launcher"-->
+
+    </group>
+</menu>
