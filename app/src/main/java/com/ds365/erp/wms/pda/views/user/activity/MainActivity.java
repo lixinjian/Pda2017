@@ -16,7 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.ds365.erp.wms.pda.R;
 import com.ds365.erp.wms.pda.views.user.adapter.ViewPagerFragmentAdapter;
@@ -40,11 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
 
-    public LinearLayout enterTab;
-    public LinearLayout outterTab;
-    public LinearLayout stockTab;
-    public LinearLayout queryTab;
-    public LinearLayout messageTab;
+    private LinearLayout enterTab,outterTab,stockTab,queryTab,messageTab;
+    private ImageView enterTabImg,outterTabImg,stockTabImg,queryTabImg,messageTabImg;
+    private TextView enterTabText,outterTabText,stockTabText,queryTabText,messageTabText;
     ViewPager mViewPager;
     ViewPagerFragmentAdapter mViewPagerFragmentAdapter;
     FragmentManager mFragmentManager;
@@ -120,6 +120,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         queryTab.setOnClickListener(this);
         messageTab = (LinearLayout) findViewById(R.id.mainActivity_tab_message);
         messageTab.setOnClickListener(this);
+        enterTabImg = (ImageView) findViewById(R.id.mainActivity_tab_enter_img);
+        outterTabImg = (ImageView) findViewById(R.id.mainActivity_tab_outter_img);
+        stockTabImg = (ImageView) findViewById(R.id.mainActivity_tab_stock_img);
+        queryTabImg = (ImageView) findViewById(R.id.mainActivity_tab_query_img);
+        messageTabImg = (ImageView) findViewById(R.id.mainActivity_tab_message_img);
+        enterTabText = (TextView) findViewById(R.id.mainActivity_tab_enter_text);
+        outterTabText = (TextView) findViewById(R.id.mainActivity_tab_outter_text);
+        stockTabText = (TextView) findViewById(R.id.mainActivity_tab_stock_text);
+        queryTabText = (TextView) findViewById(R.id.mainActivity_tab_query_text);
+        messageTabText = (TextView) findViewById(R.id.mainActivity_tab_message_text);
     }
 
     /**
@@ -182,40 +192,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void switchTabImage(int i) {
         switch (i){
             case 0:
-                enterTab.setBackgroundColor(Color.blue(android.R.color.holo_blue_light));
-                outterTab.setBackgroundColor(Color.WHITE);
-                stockTab.setBackgroundColor(Color.WHITE);
-                queryTab.setBackgroundColor(Color.WHITE);
-                messageTab.setBackgroundColor(Color.WHITE);
-
+                enterTabImg.setImageResource(R.drawable.tab_enter_warehouse_checked);
+                outterTabImg.setImageResource(R.drawable.tab_out_warehouse);
+                stockTabImg.setImageResource(R.drawable.tab_stock);
+                queryTabImg.setImageResource(R.drawable.tab_query);
+                messageTabImg.setImageResource(R.drawable.tab_message);
+                enterTabText.setTextColor(getResources().getColor(R.color.tabTextColorChecked));
+                outterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                stockTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                queryTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                messageTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
                 break;
             case 1:
-                enterTab.setBackgroundColor(Color.WHITE);
-                outterTab.setBackgroundColor(Color.blue(android.R.color.holo_blue_light));
-                stockTab.setBackgroundColor(Color.WHITE);
-                queryTab.setBackgroundColor(Color.WHITE);
-                messageTab.setBackgroundColor(Color.WHITE);
+                enterTabImg.setImageResource(R.drawable.tab_enter_warehouse);
+                outterTabImg.setImageResource(R.drawable.tab_out_warehouse_checked);
+                stockTabImg.setImageResource(R.drawable.tab_stock);
+                queryTabImg.setImageResource(R.drawable.tab_query);
+                messageTabImg.setImageResource(R.drawable.tab_message);
+                enterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                outterTabText.setTextColor(getResources().getColor(R.color.tabTextColorChecked));
+                stockTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                queryTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                messageTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
                 break;
             case 2:
-                enterTab.setBackgroundColor(Color.WHITE);
-                outterTab.setBackgroundColor(Color.WHITE);
-                stockTab.setBackgroundColor(Color.blue(android.R.color.holo_blue_light));
-                queryTab.setBackgroundColor(Color.WHITE);
-                messageTab.setBackgroundColor(Color.WHITE);
+                enterTabImg.setImageResource(R.drawable.tab_enter_warehouse);
+                outterTabImg.setImageResource(R.drawable.tab_out_warehouse);
+                stockTabImg.setImageResource(R.drawable.tab_stock_checked);
+                queryTabImg.setImageResource(R.drawable.tab_query);
+                messageTabImg.setImageResource(R.drawable.tab_message);
+                enterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                outterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                stockTabText.setTextColor(getResources().getColor(R.color.tabTextColorChecked));
+                queryTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                messageTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
                 break;
             case 3:
-                enterTab.setBackgroundColor(Color.WHITE);
-                outterTab.setBackgroundColor(Color.WHITE);
-                stockTab.setBackgroundColor(Color.WHITE);
-                queryTab.setBackgroundColor(Color.blue(android.R.color.holo_blue_light));
-                messageTab.setBackgroundColor(Color.WHITE);
+                enterTabImg.setImageResource(R.drawable.tab_enter_warehouse);
+                outterTabImg.setImageResource(R.drawable.tab_out_warehouse);
+                stockTabImg.setImageResource(R.drawable.tab_stock);
+                queryTabImg.setImageResource(R.drawable.tab_query_checked);
+                messageTabImg.setImageResource(R.drawable.tab_message);
+                enterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                outterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                stockTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                queryTabText.setTextColor(getResources().getColor(R.color.tabTextColorChecked));
+                messageTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
                 break;
             case 4:
-                enterTab.setBackgroundColor(Color.WHITE);
-                outterTab.setBackgroundColor(Color.WHITE);
-                stockTab.setBackgroundColor(Color.WHITE);
-                queryTab.setBackgroundColor(Color.WHITE);
-                messageTab.setBackgroundColor(Color.blue(android.R.color.holo_blue_light));
+                enterTabImg.setImageResource(R.drawable.tab_enter_warehouse);
+                outterTabImg.setImageResource(R.drawable.tab_out_warehouse);
+                stockTabImg.setImageResource(R.drawable.tab_stock);
+                queryTabImg.setImageResource(R.drawable.tab_query);
+                messageTabImg.setImageResource(R.drawable.tab_message_checked);
+                enterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                outterTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                stockTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                queryTabText.setTextColor(getResources().getColor(R.color.tabTextColor));
+                messageTabText.setTextColor(getResources().getColor(R.color.tabTextColorChecked));
                 break;
         }
     }

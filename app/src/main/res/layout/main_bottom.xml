@@ -25,9 +25,8 @@
 
                 <ImageView
                     android:id="@+id/mainActivity_tab_enter_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/tab_enter_warehouse"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <TextView
                     android:id="@+id/mainActivity_tab_enter_text"
@@ -46,9 +45,8 @@
 
                 <ImageView
                     android:id="@+id/mainActivity_tab_outter_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/tab_out_warehouse"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <TextView
                     android:id="@+id/mainActivity_tab_outter_text"
@@ -67,9 +65,8 @@
 
                 <ImageView
                     android:id="@+id/mainActivity_tab_stock_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/tab_stock"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <TextView
                     android:id="@+id/mainActivity_tab_stock_text"
@@ -88,9 +85,8 @@
 
                 <ImageView
                     android:id="@+id/mainActivity_tab_query_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/tab_query"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <TextView
                     android:id="@+id/mainActivity_tab_query_text"
@@ -109,9 +105,8 @@
 
                 <ImageView
                     android:id="@+id/mainActivity_tab_message_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/tab_message"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <TextView
                     android:id="@+id/mainActivity_tab_message_text"
