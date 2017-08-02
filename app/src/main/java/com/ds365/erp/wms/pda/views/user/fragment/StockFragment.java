@@ -25,7 +25,7 @@ public class StockFragment extends Fragment {
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_main_enter, null);
         }
-        ((TextView) mView.findViewById(R.id.mTextView)).setText("库存");
+//        ((TextView) mView.findViewById(R.id.mTextView)).setText("库存");
         return mView;
     }
 }

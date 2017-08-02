@@ -16,7 +16,7 @@ import com.ds365.erp.wms.pda.R;
 
 public class EnterFragment extends Fragment {
 
-    View mView;
+    private View mView;
 
     @Nullable
     @Override
@@ -24,7 +24,7 @@ public class EnterFragment extends Fragment {
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_main_enter, null);
         }
-        ((TextView) mView.findViewById(R.id.mTextView)).setText("入库");
+//        ((TextView) mView.findViewById(R.id.mTextView)).setText("入库");
         return mView;
     }
 }

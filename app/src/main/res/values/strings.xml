@@ -8,5 +8,12 @@
     <string name="query">查询业务</string>
     <string name="message">消息</string>
 
+    <!-- 入库业务 -->
+    <string name="enter_purchase">采购收货入库</string>
+    <string name="enter_sale_return">销售退货入库</string>
+    <string name="enter_allot">调拨入库</string>
+
+
+
 
 </resources>

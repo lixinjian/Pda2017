@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
 
-    private LinearLayout enterTab,outterTab,stockTab,queryTab,messageTab;
-    private ImageView enterTabImg,outterTabImg,stockTabImg,queryTabImg,messageTabImg;
-    private TextView enterTabText,outterTabText,stockTabText,queryTabText,messageTabText;
+    private LinearLayout enterTab, outterTab, stockTab, queryTab, messageTab;
+    private ImageView enterTabImg, outterTabImg, stockTabImg, queryTabImg, messageTabImg;
+    private TextView enterTabText, outterTabText, stockTabText, queryTabText, messageTabText;
     ViewPager mViewPager;
     ViewPagerFragmentAdapter mViewPagerFragmentAdapter;
     FragmentManager mFragmentManager;
@@ -187,10 +187,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 底部按钮颜色的切换
+     *
      * @param i
      */
     private void switchTabImage(int i) {
-        switch (i){
+        switch (i) {
             case 0:
                 enterTabImg.setImageResource(R.drawable.tab_enter_warehouse_checked);
                 outterTabImg.setImageResource(R.drawable.tab_out_warehouse);

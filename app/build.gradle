@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.ds365.erp.wms.pda"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,4 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
 }

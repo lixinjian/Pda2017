@@ -24,7 +24,7 @@ public class OutterFragment extends Fragment {
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_main_enter, null);
         }
-        ((TextView) mView.findViewById(R.id.mTextView)).setText("出库");
+//        ((TextView) mView.findViewById(R.id.mTextView)).setText("出库");
         return mView;
     }
 }
