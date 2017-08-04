@@ -22,9 +22,9 @@ public class MessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mView == null) {
-            mView = inflater.inflate(R.layout.fragment_main_enter, null);
+            mView = inflater.inflate(R.layout.fragment_main_message, null);
         }
-//        ((TextView) mView.findViewById(R.id.mTextView)).setText("消息");
+        ((TextView) mView.findViewById(R.id.mTextView)).setText("消息");
         return mView;
     }
 }

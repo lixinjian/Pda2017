@@ -7,18 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ds365.erp.wms.pda.R;
+import com.ds365.erp.wms.pda.views.common.LazyLoadFragment;
 
 /**
  * Created by Administrator on 2017/7/31 0027.
  */
 
-public class OutterFragment extends Fragment {
+public class OutterFragment extends LazyLoadFragment{
 
-    View mView;
+    private TextView mTextView;
 
-    @Nullable
+    /*@Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mView == null) {
@@ -26,5 +28,17 @@ public class OutterFragment extends Fragment {
         }
 //        ((TextView) mView.findViewById(R.id.mTextView)).setText("出库");
         return mView;
+    }*/
+
+    @Override
+    protected int setContentView() {
+        return R.layout.fragment_main_outter;
+    }
+
+    @Override
+    protected void lazyLoad() {
+        Toast.makeText(getActivity(), "加载出库", Toast.LENGTH_SHORT).show();
+        mTextView = findViewById(R.id.mTextView);
+        mTextView.setText("出库");
     }
 }

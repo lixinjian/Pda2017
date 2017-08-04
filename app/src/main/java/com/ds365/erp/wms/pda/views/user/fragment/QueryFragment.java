@@ -22,9 +22,9 @@ public class QueryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mView == null) {
-            mView = inflater.inflate(R.layout.fragment_main_enter, null);
+            mView = inflater.inflate(R.layout.fragment_main_query, null);
         }
-//        ((TextView) mView.findViewById(R.id.mTextView)).setText("查询");
+        ((TextView) mView.findViewById(R.id.mTextView)).setText("查询");
         return mView;
     }
 }
