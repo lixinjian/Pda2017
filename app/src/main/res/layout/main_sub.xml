@@ -5,12 +5,12 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
+    <com.ds365.erp.wms.pda.common.widget.NoPreloadViewPager
         android:id="@+id/ViewPagerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-    </android.support.v4.view.ViewPager>
+    </com.ds365.erp.wms.pda.common.widget.NoPreloadViewPager>
 
     <include layout="@layout/main_bottom"></include>
 </LinearLayout>

@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ds365.erp.wms.pda.R;
+import com.ds365.erp.wms.pda.common.widget.NoPreloadViewPager;
 import com.ds365.erp.wms.pda.views.user.adapter.ViewPagerFragmentAdapter;
 import com.ds365.erp.wms.pda.views.user.fragment.EnterFragment;
 import com.ds365.erp.wms.pda.views.user.fragment.MessageFragment;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout enterTab, outterTab, stockTab, queryTab, messageTab;
     private ImageView enterTabImg, outterTabImg, stockTabImg, queryTabImg, messageTabImg;
     private TextView enterTabText, outterTabText, stockTabText, queryTabText, messageTabText;
-    ViewPager mViewPager;
+    NoPreloadViewPager mViewPager;
     ViewPagerFragmentAdapter mViewPagerFragmentAdapter;
     FragmentManager mFragmentManager;
     int[] titleName = new int[]{
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void initViewPager() {
-        mViewPager.addOnPageChangeListener(new ViewPagetOnPagerChangedLisenter());
+        mViewPager.setOnPageChangeListener(new ViewPagetOnPagerChangedLisenter());
         mViewPager.setAdapter(mViewPagerFragmentAdapter);
         //默认选中第一张viewPager
         mViewPager.setCurrentItem(0);
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void initView() {
-        mViewPager = (ViewPager) findViewById(R.id.ViewPagerLayout);
+        mViewPager = (NoPreloadViewPager) findViewById(R.id.ViewPagerLayout);
         enterTab = (LinearLayout) findViewById(R.id.mainActivity_tab_enter);
         enterTab.setOnClickListener(this);
         outterTab = (LinearLayout) findViewById(R.id.mainActivity_tab_outter);
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    class ViewPagetOnPagerChangedLisenter implements ViewPager.OnPageChangeListener {
+    class ViewPagetOnPagerChangedLisenter implements ViewPager.OnPageChangeListener, NoPreloadViewPager.OnPageChangeListener {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
