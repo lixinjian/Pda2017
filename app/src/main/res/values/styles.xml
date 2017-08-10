@@ -17,4 +17,33 @@
         <item name="android:paddingTop">5dp</item>
     </style>
 
+    <!--输入框样式-->
+    <style name="editTxtStyle_text">
+        <item name="android:background">@drawable/dateedit_background_shape</item>
+        <item name="android:inputType">text</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--密码输入框的样式-->
+    <style name="password_editText">
+        <item name="android:background">@drawable/dateedit_background_shape</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--数字输入框的样式-->
+    <style name="editTxtStyle_number">
+        <item name="android:background">@drawable/dateedit_background_shape</item>
+        <item name="android:inputType">number</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--登录按钮的样式-->
+    <style name="loginButtonStyle">
+        <item name="android:background">@drawable/login_button_seclector</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

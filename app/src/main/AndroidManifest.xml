@@ -3,12 +3,15 @@
           package="com.ds365.erp.wms.pda">
 
     <application
+        android:name=".common.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".views.user.activity.MainActivity">
+        </activity>
+        <activity android:name=".views.user.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -11,4 +11,6 @@
     <color name="tabTextColor">#000000</color>
     <color name="tabTextColorChecked">#ff0000</color>
 
+    <color name="headerColor">#00B2EE</color>
+
 </resources>

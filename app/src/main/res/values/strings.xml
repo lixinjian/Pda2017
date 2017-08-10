@@ -14,6 +14,16 @@
     <string name="enter_allot">调拨入库</string>
 
 
+    <string name="wms">店商互联WMS系统</string>
+    <string name="header_back">返回</string>
 
+    <string name="warehouse">仓库</string>
+    <string name="userName">用户名</string>
+    <string name="user_name_edit">请输入用户名</string>
+    <string name="password_edit">请输入密码</string>
+    <string name="password_remmber">记住登录密码</string>
+    <string name="password">密码</string>
+    <string name="button_login">登录</string>
+    <string name="version">版本:</string>
 
 </resources>
