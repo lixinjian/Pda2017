@@ -7,14 +7,11 @@ import rx.subjects.PublishSubject;
 import rx.Observable;
 import rx.functions.Action0;
 
-
 public class HttpUtil {
-
     /**
      * 构造方法私有
      */
     private HttpUtil() {
-
     }
 
     /**

@@ -1,9 +1,5 @@
 package com.ds365.networkconnections.http;
 
-/**
- * Created by helin on 2016/10/10 11:52.
- */
-
 public class ApiException extends RuntimeException {
 
     public static final int USER_NOT_EXIST = 100;

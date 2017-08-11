@@ -8,7 +8,6 @@ import rx.Subscriber;
 
 public abstract class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCancelListener {
 
-
     private SimpleLoadDialog dialogHandler;
 
     public ProgressSubscriber(Context context) {
@@ -19,7 +18,6 @@ public abstract class ProgressSubscriber<T> extends Subscriber<T> implements Pro
     public void onCompleted() {
         dismissProgressDialog();
     }
-
 
     /**
      * 显示Dialog

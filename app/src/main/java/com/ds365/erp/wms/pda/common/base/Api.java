@@ -1,4 +1,6 @@
-package com.ds365.networkconnections.http;
+package com.ds365.erp.wms.pda.common.base;
+
+import com.ds365.networkconnections.http.Url;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

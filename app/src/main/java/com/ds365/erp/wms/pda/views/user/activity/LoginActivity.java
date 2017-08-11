@@ -1,40 +1,46 @@
 package com.ds365.erp.wms.pda.views.user.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.ds365.commons.AppConstants;
 import com.ds365.erp.wms.pda.R;
+import com.ds365.erp.wms.pda.common.activity.BaseActivity;
+import com.ds365.erp.wms.pda.common.base.Api;
+import com.ds365.erp.wms.pda.model.user.VerifyCodeModel;
 import com.ds365.networkconnections.base.ActivityLifeCycleEvent;
-import com.ds365.networkconnections.base.BaseActivity;
-import com.ds365.networkconnections.http.Api;
 import com.ds365.networkconnections.http.HttpUtil;
 import com.ds365.networkconnections.http.ProgressSubscriber;
-import com.ds365.networkconnections.model.VerifyCodeModel;
-import com.ds365.networkconnections.view.SimpleLoadDialog;
-
-import java.util.List;
+import com.ds365.networkconnections.http.Url;
 
 import rx.Observable;
 
 public class LoginActivity extends BaseActivity {
 
-    private TextView mText;
-    private SimpleLoadDialog dialogHandler;
+    private boolean mIntentFromMessageFlag = false;//用来判断是否是从消息点击过来的
+
+    private ImageView mVerifyCodeImage;
+
+    private String captchaToken;//token
+    private StringBuilder sb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        dialogHandler = new SimpleLoadDialog(LoginActivity.this, null, true);
-        mText = (TextView) findViewById(R.id.text);
+        mVerifyCodeImage = (ImageView) findViewById(R.id.login_verifyCode_image);
+
+        if (AppConstants.Intent_FROMMESSAGE_KEY.equals(getIntent().getStringExtra(AppConstants.Intent_FROMMESSAGE_KEY))) {
+            mIntentFromMessageFlag = true;
+        }
+
         findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-//                dialogHandler.obtainMessage(SimpleLoadDialog.SHOW_PROGRESS_DIALOG).sendToTarget();
-                doGet();
+            public void onClick(View view) {
+                getCaptchaToken();
             }
         });
     }
@@ -47,22 +53,14 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-//        dialogHandler.obtainMessage(SimpleLoadDialog.DISMISS_PROGRESS_DIALOG).sendToTarget();
     }
 
-    private void doGet() {
-        //获取豆瓣电影TOP 100
-//        Observable ob = Api.getDefault().getTopMovie(0, 100);
-        Observable ob = Api.getDefault().getImage();
-        //嵌套请求
-//        ob.flatMap(new Func1<String, Observable<HttpResult<Subject>>>() {
-//
-//            @Override
-//            public Observable<HttpResult<Subject>> call(String s) {
-//                return Api.getDefault().getUser("aa");
-//            }
-//        });
+    /**
+     * 获取验证码,在获取验证码之前先获取token.
+     */
+    private void getCaptchaToken() {
 
+        Observable ob = Api.getDefault().getImage();
 
         HttpUtil.getInstance().toSubscribe(ob, new ProgressSubscriber<VerifyCodeModel>(this) {
             @Override
@@ -71,14 +69,12 @@ public class LoginActivity extends BaseActivity {
             }
 
             @Override
-            protected void _onNext(VerifyCodeModel image) {
-                /*String str = "";
-                for (int i = 0; i < list.size(); i++) {
-                    str += "电影名：" + list.get(i).getTitle() + "\n";
-                }
-                mText.setText(str);*/
-                Log.e("lili", "" + image.getToken());
-                Toast.makeText(LoginActivity.this, ""+image.getToken(), Toast.LENGTH_SHORT).show();
+            protected void _onNext(VerifyCodeModel result) {
+                captchaToken = result.getToken();
+                sb = new StringBuilder(Url.image);
+                sb.append("?").append(AppConstants.captchTokenParamsName).append("=").append(captchaToken);
+                sb.append("&").append(AppConstants.requestSourceParamsName).append("=").append(AppConstants.requestSourceValue_app);
+                Glide.with(LoginActivity.this).load(sb.toString()).into(mVerifyCodeImage);
             }
         }, "cacheKey", ActivityLifeCycleEvent.DESTROY, lifecycleSubject, false, false);
     }

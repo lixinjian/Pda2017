@@ -1,6 +1,5 @@
 package com.ds365.networkconnections.http;
 
-
 import com.orhanobut.hawk.Hawk;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -8,7 +7,6 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
-
 
 public class RetrofitCache {
     /**

@@ -1,7 +1,11 @@
-package com.ds365.networkconnections.base;
+package com.ds365.erp.wms.pda.common.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+
+import com.ds365.commons.AppConstants;
+import com.ds365.networkconnections.base.ActivityLifeCycleEvent;
 
 import rx.subjects.PublishSubject;
 
@@ -15,6 +19,8 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // 禁止横屏
         lifecycleSubject.onNext(ActivityLifeCycleEvent.CREATE);
         super.onCreate(savedInstanceState);
     }

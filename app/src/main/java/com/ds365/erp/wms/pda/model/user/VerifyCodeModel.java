@@ -1,4 +1,4 @@
-package com.ds365.networkconnections.model;
+package com.ds365.erp.wms.pda.model.user;
 
 /**
  * Created by Administrator on 2017/8/3 0003.

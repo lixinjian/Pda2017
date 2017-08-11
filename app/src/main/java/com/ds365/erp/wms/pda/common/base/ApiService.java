@@ -1,14 +1,11 @@
-package com.ds365.networkconnections.http;
+package com.ds365.erp.wms.pda.common.base;
 
+import com.ds365.erp.wms.pda.model.user.VerifyCodeModel;
+import com.ds365.networkconnections.http.Url;
 import com.ds365.networkconnections.model.HttpResult;
-import com.ds365.networkconnections.model.VerifyCodeModel;
 
 import retrofit2.http.GET;
 import rx.Observable;
-
-/**
- * Created by helin on 2016/10/9 17:09.
- */
 
 public interface ApiService {
    /* @GET("/student/mobileRegister")
@@ -23,5 +20,11 @@ public interface ApiService {
 
     @GET("/erp-mobile-commons-web-main/commons/captchaCode/getCaptchaToken")
     Observable<HttpResult<VerifyCodeModel>> getImage();
+
+//    getCommonIP() + "commons/captchaCode/getCaptchaImage";
+
+//    Observable
+
+
 
 }
