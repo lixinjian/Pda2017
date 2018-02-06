@@ -63,7 +63,11 @@ public class RxHelper {
                             return Observable.error(new ApiException(result.getMessage()));
                         }
                     }
-                }).takeUntil(compareLifecycleObservable).subscribeOn(Schedulers.io()).unsubscribeOn(Schedulers.io()).subscribeOn(AndroidSchedulers.mainThread()).observeOn(AndroidSchedulers.mainThread());
+                }).takeUntil(compareLifecycleObservable)
+                        .subscribeOn(Schedulers.io())
+                        .unsubscribeOn(Schedulers.io())
+                        .subscribeOn(AndroidSchedulers.mainThread())
+                        .observeOn(AndroidSchedulers.mainThread());
             }
         };
     }

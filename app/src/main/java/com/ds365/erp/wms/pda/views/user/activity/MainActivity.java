@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int[] titleName = new int[]{
             R.string.enter, R.string.outter, R.string.stock, R.string.query, R.string.message
     };
-    List<Fragment> mFragmentList = new ArrayList<Fragment>();
+    List<Fragment> mFragmentList = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
